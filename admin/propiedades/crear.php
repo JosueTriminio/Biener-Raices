@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errores[] = 'Falta añadir habitaciones';
     }
     if (!$wc) {
-        $errores[] = 'Falta añadir Baño';
+        $errores[] = 'Falta añadir Baños';
     }
     if (!$vendedorId) {
         $errores[] = 'Elige un vendedor';
@@ -62,10 +62,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errores[] = 'Esta imagen en muy grande el peso maximo es: 1mb';
     }
 
+
+        // Validar si hay errores
+
     if (empty($errores)) {
         //** SUBIR ARCHIVOS */
 
-        //**CREAR CARPETA */
+        //**CREAR CARPETA PARA IMAGENES */
         $carpetaImg = '../../imgPropiedades/';
 
         if (!is_dir($carpetaImg)) {
@@ -94,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-require '../../includes/funciones.php';
+require '../../includes/funciones.php'; 
 incluirTemplate('header');
 ?>
 <main class="contenedor seccion">
